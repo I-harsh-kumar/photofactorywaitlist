@@ -1,0 +1,395 @@
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #0f2027, #3b5367, #5d7687, #5da3a7, #79a4a2, #a3b5b8, #83c9c7, #6fbbb8);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center everything vertically */
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+.header .logo-img {
+  width: 80px; /* Adjusted size to fit better */
+  animation: zoomIn 2s ease-in-out;
+}
+
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -72px;
+}
+
+main h1 {
+  font-size: 2rem; /* Adjusted font size */
+  margin-bottom: 15px;
+  animation: fadeIn 4s ease-in-out;
+}
+
+main h2 {
+  font-size: 1.5rem; /* Adjusted font size */
+  margin-bottom: 8px;
+  animation: fadeIn 4.5s ease-in-out;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px; /* Adjusted to fit better */
+  animation: slideInUp 5s ease-in-out;
+  margin-top: 2px;
+}
+
+input {
+  padding: 15px; /* Increased padding */
+  margin: 15px 0; /* Increased margin */
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+  animation: pulse 4s infinite;
+}
+
+input:focus {
+  border-color: #61dafb;
+  outline: none;
+}
+
+button {
+  padding: 15px 20px; /* Increased padding */
+  border: none;
+  background-color: #61dafb;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px; /* Adjusted size */
+  transition: background-color 0.3s, transform 0.3s;
+  animation: pulse 2s infinite;
+  margin-top: 4px;
+}
+
+button:hover {
+  background-color: #21f1a8;
+  transform: scale(1.05);
+  /* font-size: medium; */
+}
+
+
+.camera-img {
+  margin-top: 16px;
+  width: 300px;
+  animation: zoomIn 3s ease-in-out;
+  margin-bottom:-36px ;
+}
+
+.social-section {
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 20px ;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 15px;
+  font-size: 1.8rem;
+  transition: color 0.3s, transform 0.3s;
+  animation: pulse 3s infinite;
+}
+
+.social-icons a:hover {
+  color: #61dafb;
+  transform: scale(1.2);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px; /* Adjusted padding */
+  position: absolute;
+  bottom: 0; /* Ensure footer stays at the bottom */
+  box-sizing: border-box;
+  color: white;
+  font-size: 0.8rem; /* Adjusted font size */
+  margin-top: -10px;
+}
+
+footer .left, footer .right {
+  width: 50%;
+  text-align: center;
+}
+
+footer .left {
+  text-align: left;
+  padding-left: 20px;
+}
+
+footer .right {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.waitlist {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+}
+
+.waitlist li {
+  list-style: none;
+}
+
+.loading-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: #55daff;
+  animation: loading 3s linear infinite;
+}
+.highlight {
+  color: #21f1a8; /* Teal color to match the theme */
+  font-weight: bold; /* Bold text */
+  background-color: #ffffff20; /* Slightly transparent white background */
+  padding: 5px 10px; /* Padding for better visibility */
+  border-radius: 4px; /* Rounded corners */
+  animation: fadeIn 2s ease-in-out; /* Add some animation */
+}
+
+
+/* Media Queries for Various Devices */
+@media (max-width: 1200px) {
+  main h1 {
+    font-size: 1.85rem;
+  }
+
+  main h2 {
+    font-size: 1.45rem;
+  }
+
+  .camera-img {
+    width: 140px;
+  }
+
+  .social-icons a {
+    font-size: 1.6rem;
+  }
+
+  footer {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 992px) {
+  main h1 {
+    font-size: 1.75rem;
+  }
+
+  main h2 {
+    font-size: 1.4rem;
+  }
+
+  .camera-img {
+    width: 130px;
+  }
+
+  .social-icons a {
+    font-size: 1.5rem;
+  }
+
+  footer {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  main h1 {
+    font-size: 1.6rem;
+  }
+
+  main h2 {
+    font-size: 1.3rem;
+  }
+
+  .camera-img {
+    width: 120px;
+  }
+
+  .social-icons a {
+    font-size: 1.4rem;
+  }
+
+  footer {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .App {
+    padding: 10px;
+  }
+  
+  .header .logo-img,
+  .camera-img {
+    width: 100px;
+  }
+
+  main h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  main h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  button {
+    max-width: 100%;
+  }
+
+  footer {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main h1 {
+    font-size: 1.3rem;
+  }
+
+  main h2 {
+    font-size: 1.1rem;
+  }
+
+  .camera-img {
+    width: 90px;
+  }
+
+  .social-icons a {
+    font-size: 1.2rem;
+  }
+
+  footer {
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  main h1 {
+    font-size: 1.2rem;
+  }
+
+  main h2 {
+    font-size: 1rem;
+  }
+
+  .camera-img {
+    width: 80px;
+  }
+
+  .social-icons a {
+    font-size: 1rem;
+  }
+
+  footer {
+    font-size: 0.45rem;
+  }
+}
