@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/PhotoFactoryWaitlist/static/css/main.47c78d74.css",
+    "main.js": "/PhotoFactoryWaitlist/static/js/main.3b2df0cc.js",
+    "static/js/488.be9cfbe6.chunk.js": "/PhotoFactoryWaitlist/static/js/488.be9cfbe6.chunk.js",
+    "index.html": "/PhotoFactoryWaitlist/index.html",
+    "main.47c78d74.css.map": "/PhotoFactoryWaitlist/static/css/main.47c78d74.css.map",
+    "main.3b2df0cc.js.map": "/PhotoFactoryWaitlist/static/js/main.3b2df0cc.js.map",
+    "488.be9cfbe6.chunk.js.map": "/PhotoFactoryWaitlist/static/js/488.be9cfbe6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.47c78d74.css",
+    "static/js/main.3b2df0cc.js"
+  ]
+}
