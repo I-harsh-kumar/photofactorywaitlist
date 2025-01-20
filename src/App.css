@@ -66,6 +66,7 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #0f2027, #3b5367, #5d7687, #5da3a7, #79a4a2, #a3b5b8, #83c9c7, #6fbbb8);
+
   background-size: 400% 400%;
   animation: gradientShift 10s ease infinite;
 }
