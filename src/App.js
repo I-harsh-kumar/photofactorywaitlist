@@ -41,7 +41,7 @@ function App() {
     <div className="App">
       {loading && <LoadingBar />}
       <header className="header">
-        <img src="logo-placeholder.png" alt="Photofactory Logo" className="logo-img" /> {/* Placeholder for the logo */}
+        <img src={`${process.env.PUBLIC_URL}/logo-placeholder.png`} alt="Photofactory Logo" className="logo-img" /> {/* Updated image path */}
       </header>
       <main>
         <h1>Exciting Things Are Coming Your Way</h1>
@@ -56,7 +56,7 @@ function App() {
           />
           <button type="submit">Submit</button>
         </form>
-        <img src="camera-placeholder.png" alt="Camera Lens" className="camera-img" /> {/* Placeholder for the camera lens image */}
+        <img src={`${process.env.PUBLIC_URL}/camera-placeholder.png`} alt="Camera Lens" className="camera-img" /> {/* Updated image path */}
         <p className="highlight">{message}</p> {/* Apply the highlight class here */}
         <div className="social-section">
           <h3>Check Us Out On Social Media</h3>
