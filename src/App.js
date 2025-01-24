@@ -87,13 +87,13 @@ function App() {
         <div className="social-section">
           <h3>Check Us Out On Social Media</h3>
           <div className="social-icons">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/_._photofactory?igsh=cDY1b2VhZmkyOGNy" target="_blank" rel="noopener noreferrer">
               <FaInstagram />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/share/12DqPhqeLc7/" target="_blank" rel="noopener noreferrer">
               <FaFacebook />
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://youtube.com/@photofactory9094?si=xhV9o_sFwuWYGwPh" target="_blank" rel="noopener noreferrer">
               <FaYoutube />
             </a>
           </div>
