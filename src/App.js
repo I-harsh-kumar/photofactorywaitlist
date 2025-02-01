@@ -12,44 +12,50 @@ function App() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [emails, setEmails] = useState([]);
-  const [isEmailValid, setIsEmailValid] = useState(false); // State to track email validity
+  const [isEmailValid, setIsEmailValid] = useState(false);
 
   const handleEmailChange = (e) => {
     const emailValue = e.target.value.trim();
     setEmail(emailValue);
 
-    // Regex to validate Gmail addresses
-    const emailRegex = /^[a-zA-Z0-9](\.?[a-zA-Z0-9]){5,}@gmail\.com$/;
-    const isValid = emailRegex.test(emailValue);
-    setIsEmailValid(isValid);
+    // Basic email validation (adjust regex as needed)
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
+    setIsEmailValid(emailRegex.test(emailValue)); 
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!isEmailValid) {
-      setMessage('Please enter a valid Gmail address.');
+      setMessage('Please enter a valid email address.');
       return;
     }
-    if (emails.some(existingEmail => existingEmail.email === email)) {
+
+    if (emails.includes(email)) {
       setMessage('This email is already on the waitlist.');
       return;
     }
-    try {
-      // Send confirmation email to the user (implement on your backend)
-      await axios.post('http://localhost:5000/api/send-confirmation', { email });
 
-      setMessage('A confirmation email has been sent. Please verify your email.');
-      setEmail('');
-      setIsEmailValid(false);
+    try {
+      const response = await axios.post('http://localhost:5000/api/subscribe', { email }); 
+
+      if (response.status === 200) {
+        setEmails([...emails, email]); 
+        setMessage('Thank you for subscribing! You will be notified when we launch.');
+        setEmail('');
+        setIsEmailValid(false);
+      } else {
+        setMessage('There was a problem with your subscription. Please try again later.');
+      }
     } catch (error) {
-      setMessage('Error sending confirmation email.');
+      console.error('Error subscribing:', error);
+      setMessage('There was a problem with your subscription. Please try again later.');
     }
   };
 
   useEffect(() => {
     const fetchEmails = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/waitlist');
+        const response = await axios.get('http://localhost:5000/api/waitlist'); 
         setEmails(response.data);
         setLoading(false);
       } catch (error) {
